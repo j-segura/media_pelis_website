@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-
+Route::view('peliculas', 'peliculas')->name('peliculas');
 
 Route::view('/', 'inicio')->name('inicio');
 Route::view('/show', 'show')->name('show');

@@ -178,9 +178,9 @@
     </div>
 
     <!-- MOVIES -------------->
-    <div class="movies_heading">
+    {{-- <div class="movies_heading">
         <h2>Peliculas</h2>
-    </div>
+    </div> --}}
 
     <section id="movies_list">
 

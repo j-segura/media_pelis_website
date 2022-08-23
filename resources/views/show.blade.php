@@ -49,10 +49,10 @@
                     <span class="cast_title">Keren Gillan</span>
                 </div>
 
-                <div class="cast_box">
+                <a href="https://es.wikipedia.org/wiki/Kevin_Hart" target="_blank" class="cast_box">
                     <img src="{{asset('img/play-page/cast3.jpg')}}" class="cast_img">
                     <span class="cast_title">Kevin Hart</span>
-                </div>
+                </a>
 
                 <div class="cast_box">
                     <img src="{{asset('img/play-page/cast4.jpg')}}" class="cast_img">
@@ -74,7 +74,7 @@
         <div class="plataformas">
             <h2 class="plataformas_title">Ver Pelicula</h2>
             <div class="plataformas_link">
-                <a href="#">Netflix</a>
+                <a href="https://www.netflix.com/watch/80192646?trackId=255824129&tctx=0%2C0%2CNAPA%40%40%7C4eac2c87-3d5e-4bcb-8439-547ce34565cd-48726550_titles%2F1%2F%2Fjuma%2F0%2F0%2CNAPA%40%40%7C4eac2c87-3d5e-4bcb-8439-547ce34565cd-48726550_titles%2F1%2F%2Fjuma%2F0%2F0%2Cunknown%2C%2C4eac2c87-3d5e-4bcb-8439-547ce34565cd-48726550%7C1%2CtitlesResults%2C80192646" target="_blanck">Netflix</a>
                 <a href="https://www1.cuevana3.fm/1992/jumanji-2-en-la-selva" target="_blank">Cuevana</a>
                 <a href="">Youtube</a>
             </div>
