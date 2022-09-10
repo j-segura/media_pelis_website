@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personajes', function (Blueprint $table) {
+        Schema::create('plataformalinks', function (Blueprint $table) {
             $table->id();
+            $table->string('plataforma');
+            $table->string('link');
 
-            $table->string('name', 45);
-            $table->text('descripcion');
+            $table->unsignedBigInteger('contenido_id');
+
+            $table->foreign('contenido_id')->references('id')->on('contenidos')->onDelete('cascade');
+
 
             $table->timestamps();
         });
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personajes');
+        Schema::dropIfExists('plataformalinks');
     }
 };

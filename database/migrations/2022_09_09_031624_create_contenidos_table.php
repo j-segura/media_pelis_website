@@ -20,13 +20,15 @@ return new class extends Migration
             $table->string('portada');
             $table->string('duracion');
             $table->text('sinopsis');
-            $table->string('plataforma_link');
             $table->string('trailer_link');
             $table->string('año');
-
+            $table->string('clasificacion');
+            
+            
             $table->unsignedBigInteger('categoria_id')->nullable();
 
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('set null');
+            
 
             $table->timestamps();
         });

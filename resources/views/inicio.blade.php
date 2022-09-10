@@ -136,6 +136,28 @@
                     </div>
                 </div>
             </li>
+            <li class="item-a">
+                <div class="latest_box">
+                    <div class="latest_b_img">
+                        <img src="{{asset('img/images/m-7.jpeg')}}">
+                    </div>
+                    <div class="latest_b_text">
+                        <strong>Kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item-a">
+                <div class="latest_box">
+                    <div class="latest_b_img">
+                        <img src="{{asset('img/images/m-7.jpeg')}}">
+                    </div>
+                    <div class="latest_b_text">
+                        <strong>Kin 2018</strong>
+                        <p>Action Movie</p>
+                    </div>
+                </div>
+            </li>
 
         </ul>
     </section>

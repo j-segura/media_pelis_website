@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('actors', function (Blueprint $table) {
+        Schema::create('contenido_genero', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('biografia');
-            $table->string('foto');
+
+            $table->unsignedBigInteger('contenido_id');
+            $table->unsignedBigInteger('genero_id');
+
+            $table->foreign('contenido_id')->references('id')->on('contenidos')->onDelete('cascade');
+            $table->foreign('genero_id')->references('id')->on('generos')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actors');
+        Schema::dropIfExists('contenido_genero');
     }
 };

@@ -120,7 +120,7 @@ a {
 /* main ----------------------------------------*/
 
 #main {
-    padding-top: 60px;
+    padding-top: 20px;
     background-color: #fff;
 }
 
@@ -372,11 +372,11 @@ input~.checked_radio_bg {
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    margin-bottom: 50px;
 }
 
 .btns a:hover {
     background-color: #282828;
-
 }
 
 
@@ -624,7 +624,6 @@ footer {
     flex-direction: column;
     background-color: #121212;
     color: white;
-    margin-top: 50px;
 }
 
 .footer_menus {

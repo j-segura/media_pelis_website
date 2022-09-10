@@ -15,6 +15,10 @@ class Contenido extends Model
         return $this->belongsTo('App\Models\Categoria');
     }
 
+    public function plataformalinks(){
+        return $this->hasMany('App\Models\Plataformalink');
+    }
+
     //relacion muchos a muchos
 
     public function personajes(){

@@ -28,6 +28,7 @@
 
     <!-- fontAwesome ----------->
     <script src="https://kit.fontawesome.com/d2131ce8b5.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -112,3 +113,14 @@
 </body>
 
 </html>
+
+<style>
+    main {
+        padding-top: 60px; 
+    }
+
+    .admin_tables {
+        width: 100%;
+        height: 100vh;
+    }
+</style>

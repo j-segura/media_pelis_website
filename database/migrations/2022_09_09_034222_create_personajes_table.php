@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Contenido;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contenido_genero', function (Blueprint $table) {
+        Schema::create('personajes', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('contenido_id');
-            $table->unsignedBigInteger('genero_id');
+            $table->string('name', 45);
+            $table->text('descripcion');
 
-            $table->foreign('contenido_id')->references('id')->on('contenidos')->onDelete('cascade');
-            $table->foreign('genero_id')->references('id')->on('generos')->onDelete('cascade');
+            $table->unsignedBigInteger('actor_id')->nullable();
+
+            $table->foreign('actor_id')->references('id')->on('actors')->onDelete('set null');
 
             $table->timestamps();
         });
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contenido_genero');
+        Schema::dropIfExists('personajes');
     }
 };
