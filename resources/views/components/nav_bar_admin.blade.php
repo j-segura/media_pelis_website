@@ -12,6 +12,12 @@ $nav_admin_links = [
         'route' => route('generos_index'),
         'active' => request()->routeIs('generos_index'),
     ],
+
+    [
+        'name' => 'Productores',
+        'route' => route('productores_index'),
+        'active' => request()->routeIs('productores_index'),
+    ],
 ];
 
 @endphp
@@ -82,7 +88,8 @@ $nav_admin_links = [
     /* MAIN OF TABLES -------------------*/
 
     #tables {
-        padding: 0 !important;
+        width: 100%;
+        padding: 20px;
     }
 
 </style>

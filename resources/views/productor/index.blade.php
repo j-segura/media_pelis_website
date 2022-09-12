@@ -1,10 +1,11 @@
 <x-app-layout>
     <x-nav_bar_admin>
+
         <div class="header_admin">
-            <h1>Hola Bienvanido a Generos</h1>
-            <a href="{{ route('genero_crear') }}" class="crear_btn">
+            <h1>Hola Bienvanido a Productores</h1>
+            <a href="{{ route('productor_crear') }}" class="crear_btn">
                 <i class="fa-solid fa-plus"></i>
-                Crear Genero
+                Añadir Productor
             </a>
         </div>
 
@@ -24,17 +25,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($generos as $genero)
+                    @foreach ($productors as $productor)
                         <tr class="bg-white dark:bg-white">
                             <th scope="row" class="py-4 px-6 dark:text-black">
-                                {{ $genero->id }}
+                                {{ $productor->id }}
                             </th>
                             <td class="py-4 px-6 dark:text-black">
-                                {{ $genero->name }}
+                                {{ $productor->name }}
                             </td>
                             <td class="py-4 px-6 dark:text-black flex">
-                                <a href="{{ route('genero_edit', $genero) }}" class="btn_editar">Editar</a>
-                                <form action="{{ route('genero_destroy', $genero) }}" method="post">
+                                <a href="{{ route('productor_edit', $productor) }}" class="btn_editar">Editar</a>
+                                <form action="{{ route('productor_destroy', $productor) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn_eliminar">Eliminar</button>
@@ -46,7 +47,7 @@
             </table>
         </div>
 
-        {{ $generos->links() }}
+        {{ $productors->links() }}
 
     </x-nav_bar_admin>
 </x-app-layout>

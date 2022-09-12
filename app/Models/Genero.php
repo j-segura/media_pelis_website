@@ -10,6 +10,8 @@ class Genero extends Model
     use HasFactory;
 
     //relacion muchos a muchos
+
+    protected $guarded = [];
     
     public function contenidos(){
         return $this->belongsToMany('App\Models\Contenido');

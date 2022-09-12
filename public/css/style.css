@@ -738,3 +738,57 @@ footer .website_logo {
 .nose {
     margin-top: 70px !important;
 }
+
+/* tablas -------------*/
+
+.bg_color {
+    background: #222 !important;
+}
+
+.btn_editar {
+    color: #546de5;
+    margin-right: 20px !important;
+}
+
+.btn_eliminar {
+    color: #e55454;
+}
+
+.crear_btn {
+    background-color: #546de5;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.volver_btn {
+    background-color: #222;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.crear_btn i {
+    margin-right: 5px
+}
+
+.header_admin {
+    margin-bottom: 1.5rem !important;
+}
+
+.header_admin h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.header_crear {
+    margin-bottom: 1.5rem !important;
+}
+
+.header_crear h1 {
+    font-size: 2rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}

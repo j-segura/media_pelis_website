@@ -9,6 +9,8 @@ class Productor extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     //relacion muchos a muchos
 
     public function contenidos(){

@@ -1,29 +1,52 @@
 <x-app-layout>
     <x-nav_bar_admin>
-        <a href="{{ route('categoria_crear') }}">Crear una nueva categoria</a><br><br>
-        <table class="table table-striped table-hover">
-            <thead>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>EDITAR</th>
-                <th>ELIMINAR</th>
-            </thead>
-            <tbody>
-                @foreach ($categorias as $categoria)
+        <div class="header_admin">
+            <h1>Hola Bienvanido a Categorias</h1>
+            <a href="{{ route('categoria_crear') }}" class="crear_btn">
+                <i class="fa-solid fa-plus"></i>
+                Crear Categoria
+            </a>
+        </div>
+
+        <div class="overflow-x-auto relative shadow-md sm:rounded-lg mb-10">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-900 uppercase dark:text-gray-400 bg_color">
                     <tr>
-                        <td>{{ $categoria->id }}</td>
-                        <td>{{ $categoria->name }}</td>
-                        <td><a href="{{ route('categoria_edit', $categoria) }}">EDITAR</a></td>
-                        <td>
-                            <form action="{{ route('categoria_destroy', $categoria) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit">ELIMINAR</button>
-                            </form>
-                        </td>
+                        <th scope="col" class="py-3 px-6">
+                            Id
+                        </th>
+                        <th scope="col" class="py-3 px-6">
+                            Nombre
+                        </th>
+                        <th scope="col" class="py-3 px-6">
+                            Acciones
+                        </th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach ($categorias as $categoria)
+                        <tr class="bg-white dark:bg-white">
+                            <th scope="row" class="py-4 px-6 dark:text-black">
+                                {{ $categoria->id }}
+                            </th>
+                            <td class="py-4 px-6 dark:text-black">
+                                {{ $categoria->name }}
+                            </td>
+                            <td class="py-4 px-6 dark:text-black flex">
+                                <a href="{{ route('categoria_edit', $categoria) }}" class="btn_editar">Editar</a>
+                                <form action="{{ route('categoria_destroy', $categoria) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn_eliminar">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        {{ $categorias->links() }}
+
     </x-nav_bar_admin>
 </x-app-layout>
