@@ -9,6 +9,8 @@ class Actor extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     //relacion uno a muchos
 
     public function personajes() {

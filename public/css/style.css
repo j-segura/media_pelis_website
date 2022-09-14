@@ -792,3 +792,23 @@ footer .website_logo {
     margin-top: 15px;
     margin-bottom: 20px;
 }
+
+.foto {
+    width:  60px;
+    height: 80px;
+}
+
+.acciones {
+    margin: auto;
+}
+
+.link_usables:hover {
+    color: #546de5;
+}
+
+.img_editar_actor {
+    width: 200px;
+    height: 240px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}

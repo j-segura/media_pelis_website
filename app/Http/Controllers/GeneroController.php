@@ -9,11 +9,11 @@ class GeneroController extends Controller
 {
     public function index(){
         $generos = Genero::orderBy('id', 'desc')->paginate(15);
-        return view('genero.index', compact('generos'));
+        return view('tablas.genero.index', compact('generos'));
     }
 
     public function create(){
-        return view('genero.create');
+        return view('tablas.genero.create');
     }
 
     public function store(Request $request){
@@ -22,7 +22,7 @@ class GeneroController extends Controller
     }
 
     public function edit(Genero $genero){
-        return view('genero.edit', compact('genero'));
+        return view('tablas.genero.edit', compact('genero'));
     }
 
     public function update(Request $request, Genero $genero){

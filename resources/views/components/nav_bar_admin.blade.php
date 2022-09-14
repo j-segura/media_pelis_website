@@ -18,6 +18,12 @@ $nav_admin_links = [
         'route' => route('productores_index'),
         'active' => request()->routeIs('productores_index'),
     ],
+
+    [
+        'name' => 'Actores',
+        'route' => route('actors_index'),
+        'active' => request()->routeIs('actors_index'),
+    ],
 ];
 
 @endphp
@@ -45,16 +51,17 @@ $nav_admin_links = [
 <style>
     .admin_section {
         display: flex;
+        height: 100%;
     }
 
     /*--- NAV BAR ADMINISTRACION ----------------------*/
 
     #nav_bar_admin {
-        height: 100vh;
+        height: 90vh;
         width: 250px;
         background: #222;
         color: white;
-        padding: 50px 0;
+        padding: 6px 0;
     }
 
     #nav_bar_admin ul {
@@ -89,7 +96,9 @@ $nav_admin_links = [
 
     #tables {
         width: 100%;
-        padding: 20px;
+        height: 90vh;
+        padding: 40px;
+        overflow: scroll;
     }
 
 </style>

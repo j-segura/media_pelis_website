@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActorController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\ProductorController;
@@ -44,6 +45,15 @@ Route::middleware([
     Route::get('admin/productores/{productor}/edit', [ProductorController::class, 'edit'])->name('productor_edit');
     Route::put('admin/productores/{productor}', [ProductorController::class, 'update'])->name('productor_update');
     Route::delete('admin/productores/{productor}', [ProductorController::class, 'destroy'])->name('productor_destroy');
+
+    /* actors routes---------*/
+
+    Route::get('admin/actors', [ActorController::class, 'index'])->name('actors_index');
+    Route::get('admin/actors/create', [ActorController::class, 'create'])->name('actors_create');
+    Route::post('admin/actors', [ActorController::class, 'store'])->name('actors_store');
+    Route::get('admin/actors/{actor}/edit', [ActorController::class, 'edit'])->name('actors_edit');
+    Route::put('admin/actors/{actor}', [ActorController::class, 'update'])->name('actors_update');
+    Route::delete('admin/actors/{actor}', [ActorController::class, 'destroy'])->name('actors_destroy');
 
 
 });

@@ -9,11 +9,11 @@ class ProductorController extends Controller
 {
     public function index(){
         $productors = Productor::orderBy('id', 'desc')->paginate(20);
-        return view('productor.index', compact('productors'));
+        return view('tablas.productor.index', compact('productors'));
     }
 
     public function create(){
-        return view('productor.create');
+        return view('tablas.productor.create');
     }
 
     public function store(Request $request){
@@ -22,7 +22,7 @@ class ProductorController extends Controller
     }
 
     public function edit(Productor $productor){
-        return view('productor.edit', compact('productor'));
+        return view('tablas.productor.edit', compact('productor'));
     }
 
     public function update(Request $request, Productor $productor){

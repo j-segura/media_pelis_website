@@ -34,7 +34,8 @@
                             </td>
                             <td class="py-4 px-6 dark:text-black flex">
                                 <a href="{{ route('categoria_edit', $categoria) }}" class="btn_editar">Editar</a>
-                                <form action="{{ route('categoria_destroy', $categoria) }}" method="post">
+                                <form action="{{ route('categoria_destroy', $categoria) }}" method="post"
+                                    class="formEliminar">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn_eliminar">Eliminar</button>

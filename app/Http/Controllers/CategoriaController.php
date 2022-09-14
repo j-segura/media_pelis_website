@@ -9,11 +9,11 @@ class CategoriaController extends Controller
 {
     public function index(){
         $categorias = Categoria::orderBy('id', 'desc')->paginate(10);
-        return view('categoria.index', compact('categorias'));
+        return view('tablas.categoria.index', compact('categorias'));
     }
 
     public function create(){
-        return view('categoria.create');
+        return view('tablas.categoria.create');
     }
 
     public function store(Request $request){
@@ -22,7 +22,7 @@ class CategoriaController extends Controller
     }
 
     public function edit(Categoria $categoria){
-        return view('categoria.edit', compact('categoria'));
+        return view('tablas.categoria.edit', compact('categoria'));
     }
 
     public function update(Request $request, Categoria $categoria){
