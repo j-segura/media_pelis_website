@@ -9,6 +9,8 @@ class Personaje extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     //relaicon uno a muchos
     public function actor(){
         return $this->belongsTo('App\Models\Actor');

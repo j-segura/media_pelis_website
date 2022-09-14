@@ -24,6 +24,12 @@ $nav_admin_links = [
         'route' => route('actors_index'),
         'active' => request()->routeIs('actors_index'),
     ],
+
+    [
+        'name' => 'Personajes',
+        'route' => route('personajes_index'),
+        'active' => request()->routeIs('personajes_index'),
+    ],
 ];
 
 @endphp

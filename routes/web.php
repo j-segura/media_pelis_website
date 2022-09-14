@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\PersonajeController;
 use App\Http\Controllers\ActorController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\ProductorController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::view('peliculas', 'peliculas')->name('peliculas');
@@ -55,5 +57,16 @@ Route::middleware([
     Route::put('admin/actors/{actor}', [ActorController::class, 'update'])->name('actors_update');
     Route::delete('admin/actors/{actor}', [ActorController::class, 'destroy'])->name('actors_destroy');
 
+    /* Personajes routes---------*/
+
+    Route::get('admin/personajes', [PersonajeController::class, 'index'])->name('personajes_index');
+    Route::get('admin/personajes/create', [PersonajeController::class, 'create'])->name('personajes_create');
+    Route::post('admin/personajes', [PersonajeController::class, 'store'])->name('personajes_store');
+
+    Route::get('admin/personajes/{personaje}/edit', [PersonajeController::class, 'edit'])->name('personajes_edit');
+
+    Route::put('admin/personajes/{personaje}', [PersonajeController::class, 'update'])->name('personajes_update');
+
+    Route::delete('admin/personajes/{personaje}', [PersonajeController::class, 'destroy'])->name('personajes_destroy');
 
 });
