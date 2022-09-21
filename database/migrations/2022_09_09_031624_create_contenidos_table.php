@@ -17,12 +17,15 @@ return new class extends Migration
             $table->id();
 
             $table->string('titulo');
+            $table->string('slug');
             $table->string('portada');
+            $table->string('banner');
             $table->string('duracion');
             $table->text('sinopsis');
             $table->string('trailer_link');
             $table->string('año');
-            $table->string('clasificacion');
+            $table->string('status');
+            $table->string('subcategoria');
             
             
             $table->unsignedBigInteger('categoria_id')->nullable();

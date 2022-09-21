@@ -17,10 +17,17 @@ class CategoriaSeeder extends Seeder
     {
         $genero = new Categoria();
         $genero->name = 'Pelicula';
+        $genero->slug = 'Pelicula';
         $genero->save();
 
         $genero = new Categoria();
         $genero->name = 'Serie';
+        $genero->slug = 'Serie';
+        $genero->save();
+
+        $genero = new Categoria();
+        $genero->name = 'Documental';
+        $genero->slug = 'Documental';
         $genero->save();
     }
 }

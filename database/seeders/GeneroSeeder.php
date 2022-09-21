@@ -26,5 +26,17 @@ class GeneroSeeder extends Seeder
         $genero = new Genero();
         $genero->name = 'Fantasia';
         $genero->save();
+
+        $genero = new Genero();
+        $genero->name = 'aventura';
+        $genero->save();
+
+        $genero = new Genero();
+        $genero->name = 'horror';
+        $genero->save();
+
+        $genero = new Genero();
+        $genero->name = 'Drama';
+        $genero->save();
     }
 }

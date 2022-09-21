@@ -2,7 +2,7 @@
     <section id="main">
         <!-- showcase --------->
 
-        <h1 class="showcase_heading">ESCAPARATE</h1>
+        <h1 class="showcase_heading">RECOMENDADAS</h1>
 
         <ul id="autoWidth" class="cs-hidden">
             <li class="item-a">

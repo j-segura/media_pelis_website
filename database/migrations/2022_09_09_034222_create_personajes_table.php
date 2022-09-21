@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name', 45);
             $table->text('descripcion');
 
-            $table->unsignedBigInteger('actor_id')->nullable();
+            $table->unsignedBigInteger('actor_id');
 
-            $table->foreign('actor_id')->references('id')->on('actors')->onDelete('set null');
+            $table->foreign('actor_id')->references('id')->on('actors')->onDelete('cascade');
 
             $table->timestamps();
         });
