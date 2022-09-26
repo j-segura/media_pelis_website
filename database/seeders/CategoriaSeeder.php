@@ -16,18 +16,15 @@ class CategoriaSeeder extends Seeder
     public function run()
     {
         $genero = new Categoria();
-        $genero->name = 'Pelicula';
-        $genero->slug = 'Pelicula';
+        $genero->name = 'Peliculas';
         $genero->save();
 
         $genero = new Categoria();
-        $genero->name = 'Serie';
-        $genero->slug = 'Serie';
+        $genero->name = 'Series';
         $genero->save();
 
         $genero = new Categoria();
-        $genero->name = 'Documental';
-        $genero->slug = 'Documental';
+        $genero->name = 'Documentales';
         $genero->save();
     }
 }

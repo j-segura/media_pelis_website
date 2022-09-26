@@ -1,18 +1,18 @@
 <?php
 
-use App\Http\Controllers\PersonajeController;
-use App\Http\Controllers\ActorController;
-use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\GeneroController;
-use App\Http\Controllers\ProductorController;
+use App\Http\Controllers\ContenidoController;
 use Illuminate\Support\Facades\Route;
 
 
 
 Route::view('peliculas', 'peliculas')->name('peliculas');
 
-Route::view('/', 'inicio')->name('inicio');
-Route::view('/show', 'show')->name('show');
+Route::get('/', [ContenidoController::class, 'index'])->name('inicio');
+Route::get('contenido/{contenido}', [ContenidoController::class, 'show'])->name('show');
+
+Route::get('categoria/{categoria}', [ContenidoController::class, 'categoria'])->name('categoria');
+
+Route::get('genero/{genero}', [ContenidoController::class, 'genero'])->name('genero');
 
 Route::middleware([
     'auth:sanctum',

@@ -21,8 +21,7 @@ class CategoriaFactory extends Factory
         $name = $this->faker->word();
 
         return [
-            'name' => $name,
-            'slug' => Str::slug($name)
+            'name' => $name
         ];
     }
 }

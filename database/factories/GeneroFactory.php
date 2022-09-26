@@ -22,7 +22,6 @@ class GeneroFactory extends Factory
 
         return [
             'name' => $name,
-            'slug' => Str::slug($name)
         ];
     }
 }

@@ -433,7 +433,7 @@ input~.checked_radio_bg {
 
 #show {
     width: 100%;
-    padding: 30px 7%;
+    padding: 0px 7% 30px 7%;
 }
 
 .play_container {
@@ -491,7 +491,7 @@ input~.checked_radio_bg {
     color: #fff;
 }
 
-.tags span {
+.tags a {
     background-color: rgb(32, 32, 32);
     padding: 0 4px;
 }

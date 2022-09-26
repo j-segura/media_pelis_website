@@ -5,43 +5,15 @@
         <h1 class="showcase_heading">RECOMENDADAS</h1>
 
         <ul id="autoWidth" class="cs-hidden">
-            <li class="item-a">
-                <div class="showcase_box">
-                    <img src="{{asset('img/images/s-1.jpg')}}">
-                </div>
-            </li>
-
-            <li class="item-b">
-                <div class="showcase_box">
-                    <img src="{{asset('img/images/s-2.jpg')}}">
-                </div>
-            </li>
-
-            <li class="item-c">
-                <div class="showcase_box">
-                    <img src="{{asset('img/images/s-3.jpg')}}">
-                </div>
-            </li>
-
-            <li class="item-d">
-                <div class="showcase_box">
-                    <img src="{{asset('img/images/s-4.jpg')}}">
-                </div>
-            </li>
-
-            <li class="item-e">
-                <div class="showcase_box">
-                    <img src="{{asset('img/images/s-5.png')}}">
-                </div>
-            </li>
-
-            <li class="item-e">
-                <div class="showcase_box">
-                    <a href="{{route('show')}}">
-                        <img src="{{asset('img/images/s-6.jpg')}}">
-                    </a>
-                </div>
-            </li>
+            @foreach ($recomendadas as $recomendada)
+                <li class="item-a">
+                    <div class="showcase_box">
+                        <a href="{{ route('show', $recomendada) }}">
+                            <img src="/imagenes/contenido/banners/{{ $recomendada->banner }}">
+                        </a>
+                    </div>
+                </li>
+            @endforeach
         </ul>
 
 
@@ -53,111 +25,23 @@
 
         <ul id="autoWidth2" class="cs-hidden">
 
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-1.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-2.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-3.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-4.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-5.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-6.jpg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-7.jpeg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-7.jpeg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
-            <li class="item-a">
-                <div class="latest_box">
-                    <div class="latest_b_img">
-                        <img src="{{asset('img/images/m-7.jpeg')}}">
-                    </div>
-                    <div class="latest_b_text">
-                        <strong>Kin 2018</strong>
-                        <p>Action Movie</p>
-                    </div>
-                </div>
-            </li>
+            @foreach ($estrenos as $estreno)
+                <li class="item-a">
+                    <a href="{{ route('show', $estreno) }}" class="latest_box">
+                        <div class="latest_b_img">
+                            <img src="/imagenes/contenido/portadas/{{ $estreno->portada }}">
+                        </div>
+                        <div class="latest_b_text">
+                            <strong>{{ $estreno->titulo }}</strong>
+                            <div class="flex">
+                                @foreach ($estreno->generos as $genero)
+                                    <p class="generos">{{ $genero->name }}</p>
+                                @endforeach
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            @endforeach
 
         </ul>
     </section>
@@ -206,83 +90,33 @@
 
     <section id="movies_list">
 
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-1.jpg')}}">
+        @foreach ($contenidos as $contenido)
+            <div class="movies_box">
+                <a  href="{{ route('show', $contenido) }}" class="movies_img">
+                    <img src="/imagenes/contenido/portadas/{{ $contenido->portada }}">
+                </a>
+                <a href="{{ route('show', $contenido) }}" class="descroption_a">
+                    {{ $contenido->titulo }}
+                </a>
             </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
+        @endforeach
 
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-2.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-3.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-4.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-5.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-6.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-7.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
-        </div>
-
-        <div class="movies_box">
-            <div class="movies_img">
-                <img src="{{asset('img/images/l-8.jpg')}}">
-            </div>
-            <a href="#" class="descroption_a">
-                Tin (2018) Full Movie[In English] With English Subtitles | HDRip 1080p HD
-            </a>
+        <div class="mb-16 mt-10">
+            {{ $contenidos->links() }}
         </div>
 
     </section>
 
     <!-- btn ----------->
-    <div class="btns">
+    {{-- <div class="btns">
         <a href="#">Anterior</a>
         <a href="#">Siguiente</a>
-    </div>
+    </div> --}}
 </x-app-layout>
+
+
+<style>
+    .generos {
+        margin-right: 7px !important;
+    }
+</style>

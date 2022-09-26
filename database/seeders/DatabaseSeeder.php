@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        Genero::factory(15)->create();
+        $this->call(GeneroSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(ProductorSeeder::class);
         $this->call(ActorSeeder::class);

@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('generos', function (Blueprint $table) {
             $table->id();
             $table->string('name', 45);
-            $table->string('slug');
             $table->timestamps();
         });
     }
