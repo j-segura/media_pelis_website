@@ -12,6 +12,11 @@ class Genero extends Model
     //relacion muchos a muchos
 
     protected $guarded = [];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     
     public function contenidos(){
         return $this->belongsToMany('App\Models\Contenido');

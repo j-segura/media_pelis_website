@@ -14,14 +14,12 @@ class ContenidoController extends Controller
         $estrenos = Contenido::where('status', 2)->get();
         $contenidos = Contenido::orderBy('id', 'desc')->paginate(9);
         
-        return view('inicio', compact('recomendadas', 'estrenos', 'contenidos'));
-        /* return $contenido; */
+        return view('contenidos.index', compact('recomendadas', 'estrenos', 'contenidos'));      
     }
 
     public function show(Contenido $contenido){
 
-        return view('show', compact('contenido'));
-        /* return $contenido; */
+        return view('contenidos.show', compact('contenido'));
     }
 
     public function categoria(Categoria $categoria){
@@ -30,11 +28,12 @@ class ContenidoController extends Controller
                             ->latest('id')
                             ->paginate(9);
 
-        return view('categoria', compact('contenidos', 'categoria'));
+        return view('contenidos.categoria', compact('contenidos', 'categoria'));
+
     }
 
     public function genero(Genero $genero){
         $contenidos = $genero->contenidos()->latest('id')->paginate(9);
-        return view('genero', compact('contenidos', 'genero'));
+        return view('contenidos.genero', compact('contenidos', 'genero'));
     }
 }

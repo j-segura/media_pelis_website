@@ -11,6 +11,11 @@ class Categoria extends Model
 
     protected $guarded = [];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     //Relacion uno a muchos
 
     public function contenidos(){

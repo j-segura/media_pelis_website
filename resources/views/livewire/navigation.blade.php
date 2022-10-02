@@ -2,8 +2,8 @@
 $nav_links = [
     [
         'name' => 'Inicio',
-        'route' => route('inicio'),
-        'active' => request()->routeIs('inicio'),
+        'route' => route('contenidos.index'),
+        'active' => request()->routeIs('contenidos.index'),
     ],
 ];
 @endphp
@@ -14,18 +14,12 @@ $nav_links = [
         <div class="flex justify-between h-16 menu">
 
             <!-- Logo -->
-            <a href="{{ route('inicio') }}" class="logo">
+            <a href="{{ route('contenidos.index') }}" class="logo">
                 <img src="{{ asset('img/images/logo.png') }}">
             </a>
 
             <!-- Navigation Links -->
             <div class="hidden space-x-8 lg:-my-px lg:ml-10 lg:flex">
-
-                @auth
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        Administracion
-                    </x-jet-nav-link>
-                @endauth
 
                 @foreach ($nav_links as $nav_link)
                     <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
@@ -34,7 +28,7 @@ $nav_links = [
                 @endforeach
 
                 @foreach ($categorias as $categoria)
-                    <x-jet-nav-link href="{{ route('categoria', $categoria) }}" :active="request()->routeIs('categoria', $categoria)">
+                    <x-jet-nav-link href="{{ route('contenidos.categoria', $categoria) }}" :active="request()->routeIs('contenidos.categoria', $categoria)">
                         {{ $categoria->name }}
                     </x-jet-nav-link>
                 @endforeach
@@ -141,6 +135,10 @@ $nav_links = [
                                     {{ __('Profile') }}
                                 </x-jet-dropdown-link>
 
+                                <x-jet-dropdown-link href="{{ route('admin.home') }}">
+                                    Administracion
+                                </x-jet-dropdown-link>
+
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                         {{ __('API Tokens') }}
@@ -188,11 +186,6 @@ $nav_links = [
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            @auth
-                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
-                </x-jet-responsive-nav-link>
-            @endauth
 
             @foreach ($nav_links as $nav_link)
                 <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
@@ -201,7 +194,7 @@ $nav_links = [
             @endforeach
 
             @foreach ($categorias as $categoria)
-                <x-jet-responsive-nav-link href="{{ route('categoria', $categoria) }}" :active="request()->routeIs('categoria', $categoria)">
+                <x-jet-responsive-nav-link href="{{ route('contenidos.categoria', $categoria) }}" :active="request()->routeIs('contenidos.categoria', $categoria)">
                     {{ $categoria->name }}
                 </x-jet-responsive-nav-link>
             @endforeach
@@ -230,6 +223,10 @@ $nav_links = [
                     <!-- Account Management -->
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                         {{ __('Profile') }}
+                    </x-jet-responsive-nav-link>
+
+                    <x-jet-responsive-nav-link href="{{ route('admin.home') }}" :active="request()->routeIs('admin.home')">
+                        Administracion
                     </x-jet-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
