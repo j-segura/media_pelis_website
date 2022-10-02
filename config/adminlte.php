@@ -328,8 +328,14 @@ return [
         [
             'text' => 'Generos',
             'route'  => 'admin.generos.index',
-            'icon' => 'fa-fw fa-solid fa-ticket-simple',
+            'icon' => 'fab fa-fw fa-buffer',
             'active' => ['admin/generos*'],
+        ],
+        [
+            'text' => 'Productores',
+            'route'  => 'admin.productors.index',
+            'icon' => 'fab fa-fw fa-buffer',
+            'active' => ['admin/productors*'],
         ],
         [
             'text'    => 'multilevel',

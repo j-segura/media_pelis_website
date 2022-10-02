@@ -19,37 +19,37 @@ class ProductorSeeder extends Seeder
 
         $productor = new Productor();
         $productor->name = 'Marvel';
-        $productor->slug = 'Marvel';
+        $productor->slug = 'marvel';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Paramount';
-        $productor->slug = 'Paramount';
+        $productor->slug = 'paramount';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Netflix';
-        $productor->slug = 'Netflix';
+        $productor->slug = 'netflix';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Universal';
-        $productor->slug = 'Universal';
+        $productor->slug = 'universal';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Columbia';
-        $productor->slug = 'Columbia';
+        $productor->slug = 'columbia';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Warner Bros Pictures';
-        $productor->slug = 'Warner Bros Pictures';
+        $productor->slug = 'warner-bros-pictures';
         $productor->save();
 
         $productor = new Productor();
         $productor->name = 'Pixar';
-        $productor->slug = 'Pixar';
+        $productor->slug = 'pixar';
         $productor->save();
     }
 }

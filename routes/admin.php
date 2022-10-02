@@ -13,12 +13,15 @@ use App\Http\Controllers\PersonajeController;
 
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\GeneroController;
-
+use App\Http\Controllers\Admin\ProductorController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
 /* Categorias routes ---------*/
 Route::resource('categorias', CategoriaController::class)->names('admin.categorias');
 
-/* Genero routes -------------*/
+/* Generos routes ------------*/
 Route::resource('generos', GeneroController::class)->names('admin.generos');
+
+/* Productors routes ---------*/
+Route::resource('productors', ProductorController::class)->names('admin.productors');
