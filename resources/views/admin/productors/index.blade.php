@@ -18,7 +18,7 @@
         <div class="card-body">
 
             <div class="card-header pl-0">
-                <a href="{{ route('admin.productors.create') }}" class="btn btn-secondary">Agragar nuevo productors</a>
+                <a href="{{ route('admin.productors.create') }}" class="btn btn-secondary">Agragar nuevo productor</a>
             </div>
 
             <table class="table table-striped">

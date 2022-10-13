@@ -311,13 +311,13 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+        /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
+        ], */
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorias',
@@ -336,6 +336,12 @@ return [
             'route'  => 'admin.productors.index',
             'icon' => 'fab fa-fw fa-buffer',
             'active' => ['admin/productors*'],
+        ],
+        [
+            'text' => 'Actores',
+            'route'  => 'admin.actors.index',
+            'icon' => 'fab fa-fw fa-buffer',
+            'active' => ['admin/actors*'],
         ],
         [
             'text'    => 'multilevel',

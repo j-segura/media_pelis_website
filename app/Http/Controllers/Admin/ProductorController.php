@@ -86,7 +86,7 @@ class ProductorController extends Controller
 
         $productor->update($request->all());
 
-        return redirect()->route('admin.productors.edit', compact('productor'))->with('El productor se actualizo con exito');
+        return redirect()->route('admin.productors.edit', compact('productor'))->with('info', 'El productor se actualizo con exito');
     }
 
     /**
