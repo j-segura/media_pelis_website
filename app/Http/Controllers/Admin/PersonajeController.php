@@ -16,8 +16,7 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        $personajes = Personaje::orderBy('id', 'desc')->get();
-        return view('admin.personajes.index', compact('personajes'));
+        return view('admin.personajes.index');
     }
 
     /**
