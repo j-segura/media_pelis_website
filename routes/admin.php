@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\GeneroController;
 use App\Http\Controllers\Admin\ProductorController;
 use App\Http\Controllers\Admin\ActorController;
+use App\Http\Controllers\Admin\ContenidoController;
 use App\Http\Controllers\Admin\PersonajeController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
@@ -31,5 +32,8 @@ Route::resource('productors', ProductorController::class)->names('admin.producto
 /* Actors routes -------------*/
 Route::resource('actors', ActorController::class)->names('admin.actors');
 
-/* Actors routes -------------*/
+/* Personajes routes -------------*/
 Route::resource('personajes', PersonajeController::class)->names('admin.personajes');
+
+/* Contenido routes -------------*/
+Route::resource('contenidos', ContenidoController::class)->names('admin.contenidos');
