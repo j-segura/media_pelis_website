@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'MyBlogSite')
+@section('title', 'categorias')
 
 @section('content_header')
     <h1>Lista de Categorias</h1>
@@ -18,14 +18,14 @@
         <div class="card-body">
 
             <div class="card-header pl-0">
-                <a href="{{ route('admin.categorias.create') }}" class="btn btn-secondary">Agragar nueva categoria</a>
+                <a href="{{ route('admin.categorias.create') }}" class="btn btn-success">Agragar nueva categoria</a>
             </div>
 
-            <table class="table table-striped">
-                <thead>
+            <table class="table">
+                <thead class="table-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Nombre</th>
                         <th colspan="2"></th>
                     </tr>
                 </thead>

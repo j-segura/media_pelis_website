@@ -344,44 +344,12 @@ return [
             'active' => ['admin/actors*'],
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Personajes',
+            'route'  => 'admin.personajes.index',
+            'icon' => 'fab fa-fw fa-buffer',
+            'active' => ['admin/personajes*'],
         ],
-        ['header' => 'labels'],
+        ['header' => 'OPCIONES DE CONTENIDO'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -551,5 +519,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

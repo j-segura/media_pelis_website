@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Actor;
 use Illuminate\Http\Request;
+use App\Models\Personaje;
 
 class PersonajeController extends Controller
 {
@@ -14,7 +16,8 @@ class PersonajeController extends Controller
      */
     public function index()
     {
-        //
+        $personajes = Personaje::orderBy('id', 'desc')->get();
+        return view('admin.personajes.index', compact('personajes'));
     }
 
     /**
@@ -24,7 +27,8 @@ class PersonajeController extends Controller
      */
     public function create()
     {
-        //
+        $actors = Actor::orderBy('name', 'asc')->pluck('name', 'id')->toArray();
+        return view('admin.personajes.create', compact('actors'));
     }
 
     /**
@@ -35,7 +39,16 @@ class PersonajeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:personajes',
+            'descripcion' => 'required',
+            'actor_id' => 'required',
+        ]);
+
+        $personaje = Personaje::create($request->all());
+
+        return redirect()->route('admin.personajes.edit', compact('personaje'))->with('info', 'El personaje se agrego con exito');
     }
 
     /**
@@ -44,9 +57,9 @@ class PersonajeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Personaje $personaje)
     {
-        //
+        return view('admin.personajes.show', compact('personaje'));
     }
 
     /**
@@ -55,9 +68,10 @@ class PersonajeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Personaje $personaje)
     {
-        //
+        $actors = Actor::orderBy('name', 'asc')->pluck('name', 'id')->toArray();
+        return view('admin.personajes.edit', compact('personaje', 'actors'));
     }
 
     /**
@@ -67,9 +81,18 @@ class PersonajeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Personaje $personaje)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'slug' => "required|unique:personajes,slug,$personaje->id",
+            'descripcion' => 'required',
+            'actor_id' => 'required',
+        ]);
+
+        $personaje->update($request->all());
+
+        return redirect()->route('admin.personajes.edit', compact('personaje'))->with('info', 'El personaje se actualizo con exito');
     }
 
     /**
@@ -78,8 +101,9 @@ class PersonajeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Personaje $personaje)
     {
-        //
+        $personaje->delete();
+        return redirect()->route('admin.personajes.index')->with('info', 'El personaje se elimino con exito');
     }
 }

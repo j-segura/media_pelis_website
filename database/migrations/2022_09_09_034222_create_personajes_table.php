@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 45);
+            $table->string('slug');
             $table->text('descripcion');
 
             $table->unsignedBigInteger('actor_id');

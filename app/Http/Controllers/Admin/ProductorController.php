@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Productor;
 use Illuminate\Http\Request;
 
+
 class ProductorController extends Controller
 {
     /**
@@ -13,11 +14,10 @@ class ProductorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $productors = Productor::orderBy('id', 'desc')->get();
-
-        return view('admin.productors.index', compact('productors'));
+        return view('admin.productors.index');
     }
 
     /**

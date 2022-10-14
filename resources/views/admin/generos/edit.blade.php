@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'generos')
 
 @section('content_header')
     <h1>Editar genero</h1>

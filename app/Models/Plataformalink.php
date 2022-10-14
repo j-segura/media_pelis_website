@@ -9,6 +9,8 @@ class Plataformalink extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function contenido() {
         return $this->belongsTo('App\Models\Contenido');
     }
