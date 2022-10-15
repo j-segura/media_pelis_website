@@ -11,7 +11,7 @@
         <div class="card-body">
             {!! Form::open([
                 'route' => 'admin.actors.store',
-                'enctype' => 'multipart/form-data'
+                'enctype' => 'multipart/form-data',
             ]) !!}
 
             @include('admin.actors.partials.form')
@@ -37,4 +37,3 @@
         });
     </script>
 @stop
-

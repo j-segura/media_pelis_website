@@ -8,7 +8,7 @@
 
 @section('content')
     @if (session('info'))
-        <div class="alert alert-success">
+        <div class="alert_by_me">
             <strong>{{ session('info') }}</strong>
         </div>
     @endif
@@ -36,6 +36,10 @@
     </div>
 @stop
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+@stop
+
 @section('js')
     <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
 
@@ -51,6 +55,7 @@
 @stop
 
 <style>
+    
     .foto_admin_edit {
         width: 200px;
         height: 250px;

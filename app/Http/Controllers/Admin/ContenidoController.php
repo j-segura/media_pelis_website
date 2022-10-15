@@ -81,6 +81,7 @@ class ContenidoController extends Controller
      */
     public function destroy(Contenido $contenido)
     {
-        //
+        $contenido->delete();
+        return redirect()->route('admin.contenidos.index')->with('info', "$contenido->titulo se elimino con exito!");
     }
 }

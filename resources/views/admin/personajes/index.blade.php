@@ -9,3 +9,7 @@
 @section('content')
     @livewire('admin.personajes-index')
 @stop
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+@stop

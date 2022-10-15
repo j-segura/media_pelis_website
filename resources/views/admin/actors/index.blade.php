@@ -6,6 +6,10 @@
     <h1>Lista de actores</h1>
 @stop
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
+@stop
+
 @section('content')
     @livewire('admin.actores-index')
 @stop
@@ -15,4 +19,5 @@
         width: 60px;
         height: 80px;
     }
+    
 </style>

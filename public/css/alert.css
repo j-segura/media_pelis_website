@@ -1,0 +1,14 @@
+.alert_by_me {
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: rgb(199, 243, 193);
+    border-left: 5px solid rgb(120, 253, 80);
+    color: rgb(34, 70, 29);
+    font-weight: 400;
+}
+
+.alert_by_me strong {
+    font-weight: 600;
+}

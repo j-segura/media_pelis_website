@@ -8,7 +8,7 @@
 
 @section('content')
     @if (session('info'))
-        <div class="alert alert-success">
+        <div class="alert_by_me">
             <strong>{{ session('info') }}</strong>
         </div>
     @endif
@@ -26,6 +26,10 @@
             {!! Form::close() !!}
         </div>
     </div>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
 @stop
 
 @section('js')

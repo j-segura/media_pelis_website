@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/lightslider.css')}}">
+    <link rel="stylesheet" href="{{asset('css/alert.css')}}">
 
     <!-- js links -------------->
     <script src="{{asset('js/JQuery3.3.1.js')}}"></script>

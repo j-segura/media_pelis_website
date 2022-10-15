@@ -9,7 +9,7 @@
 @section('content')
 
     @if (session('info'))
-        <div class="alert alert-success">
+        <div class="alert_by_me">
             <strong>{{ session('info') }}</strong>
         </div>
     @endif
@@ -51,4 +51,9 @@
             </table>
         </div>
     </div>
+@stop
+
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
 @stop

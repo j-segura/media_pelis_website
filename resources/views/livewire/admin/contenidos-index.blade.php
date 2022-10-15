@@ -7,14 +7,14 @@
 
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.productors.create') }}" class="btn btn-success">Agragar nuevo productor</a>
+            <a href="{{ route('admin.contenidos.create') }}" class="btn btn-success">Agragar nuevo contenido</a>
         </div>
 
         <div class="card-header">
             <input wire:model="search" class="form-control" placeholder="Buscar ...">
         </div>
 
-        @if ($productors->count())
+        @if ($contenidos->count())
             <div class="card-body">
 
                 <table class="table">
@@ -26,16 +26,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($productors as $productor)
+                        @foreach ($contenidos as $contenido)
                             <tr>
-                                <td>{{ $productor->id }}</td>
-                                <td>{{ $productor->name }}</td>
+                                <td>{{ $contenido->id }}</td>
+                                <td>{{ $contenido->titulo }}</td>
                                 <td width="10px">
                                     <a class="btn btn-primary btn-sm"
-                                        href="{{ route('admin.productors.edit', $productor) }}">editar</a>
+                                        href="{{ route('admin.contenidos.edit', $contenido) }}">editar</a>
                                 </td>
                                 <td width="10px">
-                                    <form action="{{ route('admin.productors.destroy', $productor) }}" method="POST">
+                                    <form action="{{ route('admin.contenidos.destroy', $contenido) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="bnt btn-danger btn-sm">Eliminar</button>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="card-footer">
-                {{ $productors->links() }}
+                {{ $contenidos->links() }}
             </div>
         @else
             <div class="card-body">

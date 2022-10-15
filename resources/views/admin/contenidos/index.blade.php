@@ -7,5 +7,9 @@
 @stop
 
 @section('content')
-    
+    @livewire('admin.contenidos-index')
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/alert.css') }}">
 @stop
