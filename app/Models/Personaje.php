@@ -11,6 +11,11 @@ class Personaje extends Model
 
     protected $guarded = [];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     //relaicon uno a muchos
     public function actor(){
         return $this->belongsTo('App\Models\Actor');

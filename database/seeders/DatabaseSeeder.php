@@ -21,13 +21,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        $this->call(GeneroSeeder::class);
+       /*  $this->call(GeneroSeeder::class);
         $this->call(CategoriaSeeder::class);
         $this->call(ProductorSeeder::class);
         $this->call(ActorSeeder::class);
         Personaje::factory(60)->create();
         $this->call(ContenidoSeeder::class);
-        Plataformalink::factory(60)->create();
+        Plataformalink::factory(60)->create(); */
     }
 }
 
