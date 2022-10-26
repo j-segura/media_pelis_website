@@ -41,7 +41,9 @@
             <div class="cast">
                 @foreach ($contenido->personajes as $personaje)
                     <div class="cast_box">
-                        <img src="/imagenes/fotosActores/{{ $personaje->actor->foto }}" class="cast_img">
+                        <a href="{{ $personaje->actor->link }}" target="_blank">
+                            <img src="/imagenes/fotosActores/{{ $personaje->actor->foto }}" class="cast_img">
+                        </a>
                         <span class="cast_title">{{ $personaje->actor->name }}</span>
                         <span class="cast_title">{{ $personaje->name }}</span>
                     </div>

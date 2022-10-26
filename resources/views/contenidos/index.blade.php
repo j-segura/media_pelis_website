@@ -32,7 +32,6 @@
                             <img src="/imagenes/contenido/portadas/{{ $estreno->portada }}">
                         </div>
                         <div class="latest_b_text">
-                            <strong>{{ $estreno->titulo }}</strong>
                             <div class="flex">
                                 @foreach ($estreno->generos as $genero)
                                     <p class="generos">{{ $genero->name }}</p>
