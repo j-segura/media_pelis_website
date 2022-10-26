@@ -92,6 +92,9 @@ class ContenidoController extends Controller
             'status' => 'required|in:1,2,3',
             'subcategoria' => 'required|in:1,2,3',
             'categoria_id' => 'required',
+            'generos' => 'required',
+            'productors' => 'required',
+            'personajes' => 'required',
         ]);
 
         $contenido = $request->all();
@@ -210,6 +213,9 @@ class ContenidoController extends Controller
             'status' => 'required|in:1,2,3',
             'subcategoria' => 'required|in:1,2,3',
             'categoria_id' => 'required',
+            'generos' => 'required',
+            'productors' => 'required',
+            'personajes' => 'required',
         ]);
 
         $contend = $request->all();

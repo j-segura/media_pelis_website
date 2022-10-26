@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProductorController;
 use App\Http\Controllers\Admin\ActorController;
 use App\Http\Controllers\Admin\ContenidoController;
 use App\Http\Controllers\Admin\PersonajeController;
+use App\Http\Controllers\Admin\PlataformasLinkController;
 
 Route::get('', [HomeController::class, 'index'])->name('admin.home');
 
@@ -37,3 +38,6 @@ Route::resource('personajes', PersonajeController::class)->names('admin.personaj
 
 /* Contenido routes -------------*/
 Route::resource('contenidos', ContenidoController::class)->names('admin.contenidos');
+
+/* Contenido routes -------------*/
+Route::resource('plataformalinks', PlataformasLinkController::class)->names('admin.plataformalinks');

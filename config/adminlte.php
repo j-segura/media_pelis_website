@@ -360,6 +360,11 @@ return [
             'route'        => 'admin.contenidos.create',
             'icon' => 'fas fa-fw fa-plus',
         ],
+        [
+            'text'       => 'Agregar link',
+            'route'        => 'admin.plataformalinks.index',
+            'icon' => 'fas fa-fw fa-plus',
+        ],
     ],
 
     /*
