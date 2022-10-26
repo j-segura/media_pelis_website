@@ -198,7 +198,58 @@ class ContenidoController extends Controller
      */
     public function update(Request $request, Contenido $contenido)
     {
-        //
+        $request->validate([
+            'titulo' => 'required',
+            'slug' => "required|unique:contenidos,slug,$contenido->id",
+            'portada' => 'image',
+            'banner' => 'image',
+            'duracion' => 'required',
+            'sinopsis' => 'required',
+            'trailer_link' => 'required',
+            'año' => 'required',
+            'status' => 'required|in:1,2,3',
+            'subcategoria' => 'required|in:1,2,3',
+            'categoria_id' => 'required',
+        ]);
+
+        $contend = $request->all();
+
+        if ($portada = $request->file('portada')) {
+            $rutaGuardarImg = 'imagenes/contenido/portadas';
+            $portadaContenido = "portada" . date('YmdHis') . "." . $portada->getClientOriginalExtension();
+            $portada->move($rutaGuardarImg, $portadaContenido);
+            $contend['portada'] = "$portadaContenido";
+        }else{
+            unset($contend['banner']);
+        }
+
+        if ($banner = $request->file('banner')) {
+            $rutaGuardarImg = 'imagenes/contenido/banners';
+            $bannerContenido = "banner" . date('YmdHis') . "." . $banner->getClientOriginalExtension();
+            $banner->move($rutaGuardarImg, $bannerContenido);
+            $contend['banner'] = "$bannerContenido";
+        }else{
+            unset($contend['banner']);
+        }
+
+        $contenido->update($contend); 
+
+        if ($request->generos) {
+            $contenido->generos()->detach($request->generos);
+            $contenido->generos()->sync($request->generos);
+        }
+
+        if ($request->productors) {
+            $contenido->productors()->detach($request->productors);
+            $contenido->productors()->sync($request->productors);
+        }
+
+        if ($request->personajes) {
+            $contenido->personajes()->detach($request->personajes);
+            $contenido->personajes()->sync($request->personajes);
+        }
+
+        return redirect()->route('admin.contenidos.index')->with('info', 'El contenido se actulizo con exito');
     }
 
     /**
