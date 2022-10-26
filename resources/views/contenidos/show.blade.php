@@ -17,7 +17,7 @@
 
                 <div class="tags">
                     @foreach ($contenido->generos as $genero)
-                    <a href="{{ route('contenidos.genero', $genero) }}">{{ $genero->name }}</a>
+                        <a href="{{ route('contenidos.genero', $genero) }}">{{ $genero->name }}</a>
                     @endforeach
                 </div>
 
@@ -29,31 +29,40 @@
                     <span>ver el trailer</span>
                 </a>
 
-            </div>  
+            </div>
         </div>
 
         <div class="about_movie container">
             <h2>{{ $contenido->titulo }}</h2>
-            <p>{{ $contenido->sinopsis }}</p>
+            <p>{!! $contenido->sinopsis !!}</p>
 
             <!-- casting ---------->
-            <h2 class="cast_heading">Elenco de la película</h2>
+            <h2 class="cast_heading">Elenco</h2>
             <div class="cast">
                 @foreach ($contenido->personajes as $personaje)
-                <div class="cast_box">
-                    <img src="/imagenes/fotosActores/{{ $personaje->actor->foto }}" class="cast_img">
-                    <span class="cast_title">{{ $personaje->actor->name }}</span>
-                    <span class="cast_title">{{ $personaje->name }}</span>
-                </div>
+                    <div class="cast_box">
+                        <img src="/imagenes/fotosActores/{{ $personaje->actor->foto }}" class="cast_img">
+                        <span class="cast_title">{{ $personaje->actor->name }}</span>
+                        <span class="cast_title">{{ $personaje->name }}</span>
+                    </div>
                 @endforeach
-            </div>          
+            </div>
+
+            <h2 class="cast_heading">Productores</h2>
+            <ul>
+                <li>
+                    @foreach ($contenido->productors as $productor)
+                        <li>{{ $productor->name }}</li>
+                    @endforeach
+                </li>
+            </ul>
         </div>
 
         <div class="plataformas">
             <h2 class="plataformas_title">Ver Pelicula</h2>
             <div class="plataformas_link">
                 @foreach ($contenido->plataformalinks as $link)
-                    <a href="{{  $link->link }}" target="_blanck">{{ $link->plataforma }}</a>
+                    <a href="{{ $link->link }}" target="_blanck">{{ $link->plataforma }}</a>
                 @endforeach
             </div>
         </div>
